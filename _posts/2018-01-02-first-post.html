@@ -1,23 +1,11 @@
 ---
 layout: page
 title: My website3
-subtitle: This is where I will tell my friends way too much about me
+subtitle: First try using D3.js to display distribution of organic food production, distribution and so on.
 use-site-title: true
 ---
 
-<div id="div1">
-<p id="p1">This is a paragraph.</p>
-<p id="p2">This is another paragraph.</p>
-</div>
 
-<script>
-var para = document.createElement("p");
-var node = document.createTextNode("This is new.");
-para.appendChild(node);
-
-var element = document.getElementById("div1");
-element.appendChild(para);
-</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +33,7 @@ element.appendChild(para);
 		</form>
 		
 		<h1> Répartition de la filière BIO par départements </h1>
-
+	<p>
         <script type="text/javascript">
 		
 			var body=d3.select("body");
@@ -161,5 +149,6 @@ element.appendChild(para);
 			});	
 			}
         </script>
+	</p>
     </body>
 </html>
