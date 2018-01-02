@@ -24,12 +24,6 @@ description: A website to display my learning path in data science
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Github account: "https://github.com/thibaultbl"
-    - Kaggle: "https://www.kaggle.com/wizarddata"
-    - GitHub Pages: "https://thibaultbl.github.io/"
-    - Linkedin: "https://www.linkedin.com/in/thibault-blanc"
-    - twitter: "https://twitter.com/thibault__blanc"
     
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -84,7 +78,7 @@ footer-links-active:
   google-plus: false
   github: true
   reddit: false
-  linkedin: false
+  linkedin: true
   xing: false
   stackoverflow: false
   snapchat: false
