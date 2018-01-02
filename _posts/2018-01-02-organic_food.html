@@ -5,8 +5,6 @@ subtitle: First try using D3.js to display distribution of organic food producti
 use-site-title: true
 ---
 
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,8 +30,13 @@ use-site-title: true
 			<p>
 		</form>
 		
-		<h1> Répartition de la filière BIO par départements </h1>
-	<div>
+		<div class='map-overlay-inner'>
+			<input id='slider' type='range' name="slide" min='2008' max='2011' step='1' value='2008' onchange="update_on_change()"/>
+			<input type="text" id="textInput" value="">
+		</div>
+				
+		<h1 style="color:white;"> Répartition de la filière BIO par départements </h1>
+
         <script type="text/javascript">
 		
 			var body=d3.select("body");
@@ -43,6 +46,7 @@ use-site-title: true
 			var path = d3.geo.path();
 			
 			var color_scale;
+			var year;
 			var color_scale_import;
 			
 			var var_of_interest = d3.select('input[name="group-stack"]:checked').node().value;
@@ -52,7 +56,9 @@ use-site-title: true
 				var_of_interest = d3.select('input[name="group-stack"]:checked').node().value;
 				update_viz(var_of_interest);
 			};
+
 			function handleMouseOver(d, i) {  // Add interactivity
+
 				// Use D3 to select element, change color and size
 				d3.select(this).attr({
 				  fill: "orange"
@@ -61,8 +67,18 @@ use-site-title: true
 				var id_dep = d.properties.CODE_DEPT;
 				var csv_selected = d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/bio_producteurs_dep.csv", function(data) {
 					data = data.filter(function(row) {
-						return ("0" + row['id_departement']).slice(-2) == id_dep;
+						return (("0" + row['id_departement']).slice(-2) == id_dep);
 					})
+					
+					var id_array = 0;
+					if (year == "2008")
+						id_array = 0;
+					else if (year == "2009")
+						id_array = 1;
+					else if (year == "2010")
+						id_array = 2;
+					else 
+						id_array = 3;
 					
 					svg.append("text").attr({
 						id: "t" + data.Annee + data.id_departement,  // Create an id for text so we can select it later for removing on mouseout
@@ -70,7 +86,7 @@ use-site-title: true
 						y: 80
 					})
 					.text(function() {
-						return data[0][var_of_interest].replace("s", 0) + " " + var_of_interest + " bio dans la région ";  // Value of the text
+						return data[id_array][var_of_interest].replace("s", 0) + " " + var_of_interest + " bio dans le département ";   // Value of the text
 					});
 				});			
 				
@@ -94,7 +110,7 @@ use-site-title: true
 				var id_dep = d.properties.CODE_DEPT;
 				var csv_selected = d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/bio_producteurs_dep.csv", function(data) {
 					data = data.filter(function(row) {
-						return row['id_departement'] == id_dep;
+						return (("0" + row['id_departement']).slice(-2) == id_dep) && (row["Annee"] == year);
 					})
 					
 					d3.select("#t" + data.Annee + data.id_departement).remove();  // Remove text location
@@ -105,12 +121,23 @@ use-site-title: true
 				//d3.select("#t" + d.properties.ID_GEOFLA + "prod").remove();  // Remove text location
 			}
 			
+			function updateTextInput(val) {
+				document.getElementById('textInput').value=val; 
+			}
+			
 			function update_viz(variable){
+				year = document.getElementById('slider').value;
+				updateTextInput(year);
+
 				d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/bio_producteurs_dep.csv", function(data) {	
 				
 					data.forEach(function(d) {
 						d[variable] = d[variable].replace("s", 0);
 					});
+					
+					data = data.filter(function(row) {
+						return (row["Annee"] == year);
+					})
 				
 					var max = d3.max(data, function(d) { return +d[variable]; } );
 					var min = d3.min(data, function(d) { return +d[variable]; } );
@@ -131,10 +158,11 @@ use-site-title: true
 						
 						geoJSON.features.forEach(function(d){
 							var result = data.filter(function(producteur){
-								return producteur.id_departement === d.properties.CODE_DEPT;
+								return (producteur.id_departement === d.properties.CODE_DEPT);
 							});
 							d.properties[variable] = (result[0] !== undefined) ? result[0][variable] : null;
 						});	
+
 						map.enter()
 							.append("path")
 							.attr("stroke","black")
@@ -149,6 +177,5 @@ use-site-title: true
 			});	
 			}
         </script>
-	</div>
     </body>
 </html>
