@@ -4,13 +4,11 @@ title: About me
 subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Thibault Blanc. I currently work as a data scientist @Orange, leading telecom companies in France.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I come from a heavy statistic & machine learning background with a strong coding specialization.
 
-What else do you need?
+Today, I am trying to improve my software enginerring skills and I am more and more interested by data vizualisation.
 
-### my history
+I will use this blog to share and keep track of my progress.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
