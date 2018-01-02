@@ -39,7 +39,7 @@ avatar: "/img/avatar-icon.png"
 # has a white background. You can specify a different background colour or a background image
 # for the navigation bar, the main page, and the footer.
 navbar-col: "#3B5998"
-# navbar-img: "/img/bgimage.png"
+navbar-img: "https://raw.githubusercontent.com/thibaultbl/thibaultbl.github.io/master/img/pluie.jpeg"
 footer-col: "#3B5998"
 # footer-img: "/img/bgimage.png"
 # page-col: "#FF0000"
