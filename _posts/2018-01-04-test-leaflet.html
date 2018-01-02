@@ -40,7 +40,7 @@ use-site-title: true
   <!-- Create the map content with JavaScript (.js) -->
   <script type="text/javascript">
 	function initialize() {
-		document.getElementsByClassName("col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1").style("height", "450px")
+		d3.select(".col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1").style("height", "450px")
 		
 		var map = L.map('map', {
 			maxBoundsViscosity : 0,
