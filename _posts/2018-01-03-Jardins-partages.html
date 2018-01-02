@@ -25,6 +25,13 @@ use-site-title: true
 			maxBounds:[ [48, 2], [49, 3] ],
 			minZoom: 1
 		}).setView([48.833, 2.333], 12);
+		
+		var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+			maxZoom: 18,
+		});
+	
+		map.addLayer(osmLayer);
 	
 		var icon_size = [18, 25]
 		var greenIcon = L.icon({
