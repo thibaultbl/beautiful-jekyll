@@ -68,11 +68,11 @@ use-site-title: true
 				var icon_marker = greenIcon;	
 				var title_marker = "test";
 				console.log(d.type_jard);
-				if (d.type_jard === decodeURIComponent(escape('Jardin pédagogique'))) {
+				if (d.type_jard === decodeURIComponent('Jardin%20p%C3%A9dagogique')) {
 					icon_marker = greenIcon;
-				} else if(d.type_jard.trim() === decodeURIComponent(escape("Jardin partagé"))) {
+				} else if(d.type_jard.trim() === decodeURIComponent(('Jardin%20partag%C3%A9'))) {
 					icon_marker = redIcon;
-				} else if(d.type_jard.trim() === decodeURIComponent(escape("Jardin potagé"))) {
+				} else if(d.type_jard.trim() === decodeURIComponent(('Jardin%20potag%C3%A9'))) {
 					icon_marker = brownIcon;
 				}
 				else{
