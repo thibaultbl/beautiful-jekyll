@@ -35,10 +35,12 @@ use-site-title: true
 		</div>
 				
 		<h1 style="color:white;"> Répartition de la filière BIO par départements </h1>
+	    
+	    <div id="division"></div>
 
         <script type="text/javascript">
 		
-			var body=d3.select("body");
+			var body=d3.select("#division");
 				
 			var svg=body.append("svg");
 			svg.attr({"width":"600px","height":"600px"});
