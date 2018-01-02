@@ -61,6 +61,9 @@ use-site-title: true
 			
 			iconSize: icon_size, // size of the icon
 		});
+		
+		console.log(decodeURIComponent(escape('Jardin pédagogique')));
+		console.log((escape('Jardin pédagogique')));
 			
 		d3.dsv(";")("https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/liste_des_jardins_partages_a_paris.csv", function(data) {
 			data.forEach(function(d) {
