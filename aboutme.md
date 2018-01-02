@@ -4,7 +4,7 @@ title: About me
 subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Thibault Blanc. I currently work as a data scientist @Orange, leading telecom companies in France.
+My name is Thibault Blanc. I currently work as a data scientist @Orange, leading telecom company in France.
 
 I come from a heavy statistic & machine learning background with a strong coding specialization.
 
