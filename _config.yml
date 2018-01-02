@@ -41,7 +41,7 @@ avatar: "/img/avatar-icon.png"
 navbar-col: "#3B5998"
 navbar-img: "https://raw.githubusercontent.com/thibaultbl/thibaultbl.github.io/master/img/pluie.jpeg"
 footer-col: "#3B5998"
-# footer-img: "/img/bgimage.png"
+footer-img: "https://raw.githubusercontent.com/thibaultbl/thibaultbl.github.io/master/img/pluie.jpeg"
 # page-col: "#FF0000"
 # page-img: "/img/bgimage.png"
 
