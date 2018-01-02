@@ -65,7 +65,7 @@ use-site-title: true
 				});
 				
 				var id_dep = d.properties.CODE_DEPT;
-				var csv_selected = d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/bio_producteurs_dep.csv", function(data) {
+				var csv_selected = d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/Filiere_bio_en_france/master/bio_producteurs_dep.csv", function(data) {
 					data = data.filter(function(row) {
 						return (("0" + row['id_departement']).slice(-2) == id_dep);
 					})
@@ -108,7 +108,7 @@ use-site-title: true
 				});
 				
 				var id_dep = d.properties.CODE_DEPT;
-				var csv_selected = d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/bio_producteurs_dep.csv", function(data) {
+				var csv_selected = d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/Filiere_bio_en_france/master/bio_producteurs_dep.csv", function(data) {
 					data = data.filter(function(row) {
 						return (("0" + row['id_departement']).slice(-2) == id_dep) && (row["Annee"] == year);
 					})
@@ -129,7 +129,7 @@ use-site-title: true
 				year = document.getElementById('slider').value;
 				updateTextInput(year);
 
-				d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/bio_producteurs_dep.csv", function(data) {	
+				d3.dsv(";", "utf-8")("https://raw.githubusercontent.com/thibaultbl/Filiere_bio_en_france/master/bio_producteurs_dep.csv", function(data) {	
 				
 					data.forEach(function(d) {
 						d[variable] = d[variable].replace("s", 0);
@@ -145,7 +145,7 @@ use-site-title: true
 					color_scale = d3.scale.linear().domain([0, max]).range(['#e0ffd8', 'green']);
 					
 					// Read JSON
-					var dep = d3.json("https://raw.githubusercontent.com/thibaultbl/test_thibaultbl.github.io/7bc753a9668d714e9413bdc5e0db4dd78be95495/_pages/departments.json", function(geoJSON) {
+					var dep = d3.json("https://raw.githubusercontent.com/thibaultbl/Filiere_bio_en_france/master/departments.json", function(geoJSON) {
 						svg.selectAll("path").remove();
 				
 						var projection = d3.geo.conicConformal()
