@@ -70,6 +70,7 @@ use-site-title: true
 				
 				var icon_marker = greenIcon;	
 				var title_marker = "test";
+				console.log(d.type_jard);
 				if (d.type_jard === decodeURIComponent(escape('Jardin pédagogique'))) {
 					icon_marker = greenIcon;
 				} else if(d.type_jard.trim() === decodeURIComponent(escape("Jardin partagé"))) {
@@ -95,10 +96,10 @@ use-site-title: true
 
 		legend.onAdd = function (map) {
 			var div = L.DomUtil.create('div', 'legend');
-			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-green.png">' + decodeURIComponent(escape('Jardin pédagogique')) + '<br>'
-			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-red.png">'  + decodeURIComponent(escape('Jardin partagé')) + '<br>'
-			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-brown.png">'   +  decodeURIComponent(escape('Jardin potagé')) + '<br>'
-			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-orange.png">'   +  decodeURIComponent(escape('Autre jardin')) + '<br>'
+			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-green.png">' + decodeURIComponent('Jardin%20p%C3%A9dagogique') + '<br>'
+			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-red.png">'+ decodeURIComponent(('Jardin%20partag%C3%A9')) + '<br>'
+			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-brown.png">'   +  decodeURIComponent(('Jardin%20potag%C3%A9')) + '<br>'
+			div.innerHTML +=  '<img src="https://raw.githubusercontent.com/thibaultbl/Jardin_partages_paris/master/leaf-orange.png">'   +  decodeURIComponent(('Autre%20jardin')) + '<br>'
 
 			return div;
 		};
