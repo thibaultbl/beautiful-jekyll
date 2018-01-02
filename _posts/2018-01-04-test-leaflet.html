@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Jardins partagés sur Paris. 9
+title: Jardins partagés sur Paris. 10
 subtitle: Here you can find the location and type of shared garden in Paris.
 use-site-title: true
 ---
@@ -40,7 +40,6 @@ use-site-title: true
   <!-- Create the map content with JavaScript (.js) -->
   <script type="text/javascript">
 	function initialize() {
-		d3.select(".col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1").style("height", "450px")
 		
 		var map = L.map('map', {
 			maxBoundsViscosity : 0,
@@ -127,6 +126,7 @@ use-site-title: true
 			return div;
 		};
 	legend.addTo(map);
+	d3.select(".col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1").style("height", "450px")
 	}
 </script>
 </html>
