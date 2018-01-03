@@ -21,14 +21,6 @@ body {
   {% endif %}
 }
 
-.navbar-brand {
-  color:#e3e3f4;
-}
-
-li>a {
-  color:#e3e3f4;
-}
-
 p {
   line-height: 1.5;
   margin: 30px 0;
