@@ -13,7 +13,7 @@ use-site-title: true
 		<script src="https://d3js.org/d3.v3.min.js"></script>
     </head>
     <body>  
-		<form>
+		<form class="parameters_organic">
 			<input type="radio" name="group-stack" value="Producteurs"  id="r1" onclick="update_on_change()" checked>
 			<label for="r1"><span></span>Producteurs</label>
 			<p>
@@ -28,7 +28,7 @@ use-site-title: true
 			<p>
 		</form>
 		
-		<div class='map-overlay-inner'>
+		<div class='map-overlay-inner parameters_organic' >
 			<input id='slider' type='range' name="slide" min='2008' 
 			       max='2011' step='1' value='2008' onchange="update_on_change()"
 			       style="height:19px;width:25%;"/>
