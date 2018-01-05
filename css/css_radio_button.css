@@ -7,6 +7,15 @@ body {
     margin:0;
 }
 
+.parameter_organic {
+	display: inline;
+}
+
+.map-overlay-inner.parameter_organic {
+	vertical-align: right;
+}
+
+
 
 input[type="radio"] {
     display:none;
