@@ -18,7 +18,7 @@ use-site-title: true
   <p> For the final visualization, I reduced the number of job available but for a complete application, 
     I should probably introduce a new widget to allow user to filter depending on what he want to see. </p>
 <figure>
-  <figcaption>Code to compute document similarity</figcaption>
+  <figcaption>Library and classes used</figcaption>
   <pre>
     <code>
       # -*- coding: utf-8 -*-
@@ -128,6 +128,17 @@ class PandasToSeries(BaseEstimator, TransformerMixin):
         return df.loc[:, self.col_tokeep]
 
 
+    </code>
+  </pre>
+</figure>
+  
+  <p> We can see that everything is in a custom transformer to be introduced in a scikit-learn Pipeline.
+    I think it's a really good way to have clean code and to reusse snipset of code in many project </p>
+  
+ <figure>
+  <figcaption>Main code</figcaption>
+  <pre>
+    <code>
 
 if __name__== "__main__":
     ############################"
