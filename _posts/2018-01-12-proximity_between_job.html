@@ -11,6 +11,12 @@ use-site-title: true
   
 </head>
 <body>
+<p> In this post, you can find the code used to find job similar to each other. 
+  For this purpose, we used data available on INSEE (French governemental agencies for statistics) website.
+  I manage to compute document similarity using description of task related to job.
+  </p>
+  <p> For the final visualization, I reduced the number of job available but for a complete application, 
+    I should probably introduce a new widget to allow user to filter depending on what he want to see. </p>
 <figure>
   <figcaption>Code to compute document similarity</figcaption>
   <pre>
@@ -175,6 +181,7 @@ if __name__== "__main__":
   </pre>
 </figure>
   
+  <h3> Final Result </h3>
 <style>
 
 .link {
