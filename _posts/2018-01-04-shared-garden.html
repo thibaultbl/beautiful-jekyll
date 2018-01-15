@@ -33,14 +33,14 @@ use-site-title: true
     .container {height=300px;}	  
   </style>
 </head>
-<body onload="initialize()">
+<body>
     <p> During my learing of D3.js, I found a dataset with the location of every shared garden in Paris. Because I didn't found any 
 	map with all this information, I decided to create one. You can find the result in the following map. Please enjoy !
     </p>
     <br>
     <p> From a technical point of view, it was my first try using leaflet, a javascript library really usefull to create map.
     </p>
-    <div id="map" style="width:100%;"></div>
+    <div id="map" style="width:100%;"  onload="initialize()"></div>
 </body>
 
   <!-- Create the map content with JavaScript (.js) -->
