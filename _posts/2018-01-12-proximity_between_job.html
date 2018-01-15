@@ -193,7 +193,10 @@ if __name__== "__main__":
   
  <p> And here is the final result ! You can see that jobs are filtered so that we can represent it in a force directed graph.
   It was only for fun, but we should probably add something to display the strength of proximity between jobs. 
-   Here we just show a link if the proximity is above a a fixed threshold</p>
+   Here we just show a link if the proximity is above a a fixed threshold.
+</p>
+	
+	<h3> Result for Health-related jobs </h3>
 <style>
 
 .link {
@@ -231,8 +234,8 @@ if __name__== "__main__":
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var width = 1440,
-    height = 750
+var width = 1920,
+    height = 1000
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
