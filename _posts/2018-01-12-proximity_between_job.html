@@ -68,8 +68,6 @@ def create_data_set(url_def, url_job, grand_domaine="INDUSTRIE"):
     definitions = definitions.sort_values(by="Libellé")
     definitions =\
         definitions.loc[:, ["Libellé", "code_rome"]].drop_duplicates()
-    
-     
     jobs =\
         pd.read_csv(url_job,
                     sep=";").rename(columns={"Code ROME":"code_rome"})
