@@ -8,7 +8,7 @@ use-site-title: true
 <!DOCTYPE html>
 <html>
 <head>
-  
+<link rel="stylesheet" type="text/css" href="css/code.css">
 </head>
 <body>
 <p> In this post, you can find the code used to find job similar to each other. 
@@ -126,8 +126,6 @@ class PandasToSeries(BaseEstimator, TransformerMixin):
         return self
     def transform(self, df, **transform_params):
         return df.loc[:, self.col_tokeep]
-
-
     </code>
   </pre>
 </figure>
