@@ -191,9 +191,9 @@ if __name__== "__main__":
   
   <h3> Final Result </h3>
   
- <p> And here is the final result ! You can see that job are filtered so that we can represent it in a force directed graph.
+ <p> And here is the final result ! You can see that jobs are filtered so that we can represent it in a force directed graph.
   It was only for fun, but we should probably add something to display the strength of proximity between jobs. 
-   Here we just show a link if the proximity is abova a fixed threshold</p>
+   Here we just show a link if the proximity is above a a fixed threshold</p>
 <style>
 
 .link {
@@ -261,7 +261,8 @@ d3.json("https://raw.githubusercontent.com/thibaultbl/thibaultbl.github.io/maste
       .data(json.links)
       .enter().append("line")
       .attr("class", "link")
-      .style("opacity", json.strength);
+      .transition()
+      .style("opacity", function(d) { return d.strength; }));
 
   var node = svg.selectAll(".node")
       .data(json.nodes)
