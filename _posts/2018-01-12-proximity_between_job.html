@@ -100,7 +100,6 @@ class CleanText(BaseEstimator, TransformerMixin):
         self.text_col = text_col
         self.stop_word = stop_word
     def __clean_text__(self, x):
-        
         return((' '.join(self.stemmer.stem(w.lower()) for w in x.split() 
             if w.lower() not in self.stop_word)))
     def fit(self, df, y=None, **fit_params):
