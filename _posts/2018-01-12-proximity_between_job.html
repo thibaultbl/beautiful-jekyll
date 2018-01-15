@@ -262,7 +262,7 @@ d3.json("https://raw.githubusercontent.com/thibaultbl/thibaultbl.github.io/maste
       .enter().append("line")
       .attr("class", "link")
       .transition()
-      .style("opacity", function(d) { return d.strength; });
+      .style("opacity", function(d) { console.log(d.strength;); return d.strength; });
 
   var node = svg.selectAll(".node")
       .data(json.nodes)
