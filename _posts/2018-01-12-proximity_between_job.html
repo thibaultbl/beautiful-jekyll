@@ -148,11 +148,8 @@ if __name__== "__main__":
     data = create_data_set(PATH_DATA + "pole-emploi-rome-arborescence-principale.csv",
                            PATH_DATA + "rome-code-rome-definitions.csv",
                            "SANTE")
-    # data = data.head(1000)
     data = data.groupby('jobname')['definition'].apply(lambda x: ' '.join(x))\
                .reset_index()
-    data = data.head(50)
-    # data = data.head(30)
     clean_text = CleanText(["definition"], stemmer, stop_words)
     
     pipe = Pipeline([
@@ -178,7 +175,9 @@ if __name__== "__main__":
     
     for i,j,v in zip(cx.row, cx.col, cx.data):
         if v > THRESHOLD:
-            G.add_edge(np.asscalar(i), np.asscalar(j))
+            if i != j:
+                G.add_edge(np.asscalar(i), np.asscalar(j))
+                G[np.asscalar(i)][np.asscalar(j)]['strength'] = v
             
     pos = nx.spring_layout(G)
         
