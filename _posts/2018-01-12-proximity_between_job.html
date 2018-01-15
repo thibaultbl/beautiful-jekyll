@@ -21,7 +21,7 @@ use-site-title: true
     I should probably introduce a new widget to allow user to filter depending on what he want to see. </p>
  <p> The final result is computed using a classical tf-idf matrix with cosinus distance between observations </p>
 <figure>
-  <figcaption>Library and classes used</figcaption>
+  <figcaption>Library & constant definition</figcaption>
   <pre>
     <code class="language-python">
       # -*- coding: utf-8 -*-
@@ -47,6 +47,17 @@ THRESHOLD = 0.2
 stop_words =\
     list(pd.read_csv(PATH_DATA + "stop_word.txt", header=None).iloc[:, 0])
 stemmer = SnowballStemmer("french", ignore_stopwords=False)
+
+    </code>
+  </pre>
+</figure>
+	
+	<p> Here we define function and custom transformers and estimator </p>
+	
+<figure>
+  <figcaption>Function & class definition</figcaption>
+  <pre>
+    <code class="language-python">
 
 def create_data_set(url_def, url_job, grand_domaine="INDUSTRIE"):
     definitions =\
