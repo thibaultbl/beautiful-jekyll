@@ -198,7 +198,7 @@ if __name__== "__main__":
 
 .link {
   stroke: #777;
-  stroke-opacity: 0.3;
+  stroke-opacity: 0.5;
   stroke-width: 1.5px;
 }
 
@@ -260,7 +260,9 @@ d3.json("https://raw.githubusercontent.com/thibaultbl/thibaultbl.github.io/maste
   var link = svg.selectAll(".link")
       .data(json.links)
       .enter().append("line")
-      .attr("class", "link");
+      .attr("class", "link")
+      .style("stroke-width", function (d) {
+			                           return (d.strength * 4);});
 
   var node = svg.selectAll(".node")
       .data(json.nodes)
