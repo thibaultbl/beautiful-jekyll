@@ -14,21 +14,21 @@ use-site-title: true
 <body>
 <h3> Objectives </h3>	
 <p> The goal of this post is to find jobs that are similar to each others, 
-	using public data only, mainly focused on task required for each job </p>
+	using public data only, mainly focused on tasks required for each jobs. </p>
 	<h3> Data </h3>
 	<p> We used data available on INSEE (French governemental agencies for statistics)  website. 
 	You can find data about ROME at the following link <a href="https://public.opendatasoft.com/explore/dataset/pole-emploi-rome-arborescence-principale/export/?flg=fr">data for each type of job.</a>
 	We can find the following informations:
 		<ul>
-			<li>CODE ROME: it's an ID (one letter followed by four numbers) used in France to classify jobs</li>
-			<li>Libellé ROME: which is just the name of the job</li>
-			<li>Task related to ROME: we found another dataset to link task to related job (by CODE ROME).</li>
+			<li>CODE ROME: it's an ID (one letter followed by four numbers) used in France to classify jobs.</li>
+			<li>Libellé ROME: which is just the name of the job.</li>
+			<li>Tasks related to ROME: we found another dataset to link task to related job (by CODE ROME).</li>
 		</ul>
 	</p>
 	<h3>Method </h3>
 <p>
   Document similarity is mainly computed using description of tasks related to job. 
-	Therefor, When two jobs require similar skill sets and tasks, they will be close.</br>
+	Therefor, when two jobs require similar skill sets and tasks, they will be close.</br>
 The main steps are the following:
 <ol>
 	<li>Stop words removal using a dictionnary</li>
@@ -39,9 +39,8 @@ The main steps are the following:
 </p>
   <p> For the final visualization, I reduced the number of job available (health sector only) but for a complete application, 
     I should probably introduce a new widget to allow user to filter depending on what he want to see. </p>
- <p> The final result is computed using a classical tf-idf matrix with cosinus distance between observations </p>
 <figure>
-  <figcaption>Library & constant definition</figcaption>
+	<figcaption>Library & constant definition</figcaption>
   <pre>
     <code class="language-python">
       # -*- coding: utf-8 -*-
