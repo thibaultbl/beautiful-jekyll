@@ -12,11 +12,31 @@ use-site-title: true
 <script src="../js/prism.js"></script>
 </head>
 <body>
-<p> In this post, you can find the code used to find job similar to each other. 
-  For this purpose, we used data available on INSEE (French governemental agencies for statistics) website.
-  I manage to compute document similarity using description of task related to job. 
-  Therefor, When two jobs require similar skill sets and tasks, they will be close.
-  </p>
+<h3> Objectives </h3>	
+<p> The goal of this post is to find jobs that are similar to each others, 
+	using public data only, mainly focused on task required for each job </p>
+	<h3> Data </h3>
+	<p> We used data available on INSEE (French governemental agencies for statistics)  website. 
+	You can find data about ROME at the following link <a href="https://public.opendatasoft.com/explore/dataset/pole-emploi-rome-arborescence-principale/export/?flg=fr">data for each type of job.</a>
+	We can find the following informations:
+		<ul>
+			<li>CODE ROME: it's an ID (one letter followed by four numbers) used in France to classify jobs</li>
+			<li>Libellé ROME: which is just the name of the job</li>
+			<li>Task related to ROME: we found another dataset to link task to related job (by CODE ROME).</li>
+		</ul>
+	</p>
+	<h3>Method </h3>
+<p>
+  Document similarity is mainly computed using description of tasks related to job. 
+	Therefor, When two jobs require similar skill sets and tasks, they will be close.</br>
+The main steps are the following:
+<ol>
+	<li>Stop words removal using a dictionnary</li>
+	<li>Stemming of words</li>
+	<li>Creation of a TF-IDF matrix</li>
+	<li>Computation of a cosine similarity between documents (using TF-IDF matrix as input)</li>
+</ol>
+</p>
   <p> For the final visualization, I reduced the number of job available (health sector only) but for a complete application, 
     I should probably introduce a new widget to allow user to filter depending on what he want to see. </p>
  <p> The final result is computed using a classical tf-idf matrix with cosinus distance between observations </p>
