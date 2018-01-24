@@ -8,7 +8,5 @@ My name is Thibault Blanc. I currently work as a data scientist @Orange, leading
 
 I come from a heavy statistic & machine learning background with a strong coding specialization.
 
-Today, I am trying to improve my software engineering skills and I am more and more interested by data vizualisation.
-
-I will use this blog to share and keep track of my progress.
+I initialy started this blog to have a way to put my D3.js attempts online, but you will probably find everything related to datascience, software engineering, and data-related fields.
 
