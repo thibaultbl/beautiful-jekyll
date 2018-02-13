@@ -274,7 +274,7 @@ var svg = d3.select("body").append("svg")
 var force = d3.layout.force()
     .gravity(0.1)
     .charge(-120)
-    .linkDistance(100) // 70
+    .linkDistance(70) // 100
     .size([width, height]);
 
 var voronoi = d3.geom.voronoi()
