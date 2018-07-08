@@ -34,7 +34,9 @@ The concept of protected method doesn't exist in Python (accessible within his c
 </p>
 <h3> For further informations  </h3>	
 <p> If you add just one underscore before a function, method or attribute (ex: def _hello()... instead of def __hello(), 
-  it's still considered private, but just for convention (it change nothing for python internaly). </br>
+  it's still considered private, but just for convention.  It change nothing for python internaly, except that 
+	<code class="language-python">from M import * </code> does not import objects whose name starts with an underscore.
+</br>
 
 Below an illustration inspired from stackoverflow:
 
@@ -59,7 +61,7 @@ Below an illustration inspired from stackoverflow:
   </pre>
 </figure>
 
-
+If we launch 
 </p>
 	
 
