@@ -1,1 +1,68 @@
 
+---
+layout: page
+title: Python Private method and functions
+subtitle: Private mlethod and functions in Python
+use-site-title: true
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/prism.css">
+<script src="../js/prism.js"></script>
+</head>
+<body>
+<h3> Objectives </h3>	
+<p> Back to basics. A really small post to explain the concept of private method and functions in Python.</p>
+ <h3> What is a private method / function ? </h3>	
+  <p>
+A private function is a function that can be called only inside his module. 
+A private class method is a method that can be called only inside his class.
+The concept of protected method doesn't exist in Python (accessible within his class and all classes that inherit his classes).
+  </p>
+<h3> How to make a method / function pivate ? </h3>	
+  <p> Really easy ! Just add two underscore before the method or function name and it become private (also works for attributes), 
+    do not add two uderscores at the end of the name, it's for builtin/special method. </br>
+  </p>
+<h3> Summary</h3>	
+<p>
+<ul>
+  <li> A private functions or method is private only because of his name. </li>
+  <li> Just add two underscore before a method, function or attribute to make it private.</li>
+  <li> Do not add two underscore at the end of a method, functions or attribute name. </li>
+</ul> 
+</p>
+<h3> For further informations  </h3>	
+<p> If you add just one underscore before a function, method or attribute (ex: def _hello()... instead of def __hello(), 
+  it's still considered private, but just for convention (it change nothing for python internaly). </br>
+
+Below an illustration from stackoverflow:
+
+<figure>
+	<figcaption>Library & constant definition</figcaption>
+  <pre>
+    <code class="language-python">
+     class Test(object):
+         def __init__(self):
+              self.__a = 'a'
+              self._b = 'b'
+     
+     >>> t = Test()
+     >>> t._b
+     'b'
+     
+     >>> t.__a
+      Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+      AttributeError: 'Test' object has no attribute '__a'
+    </code>
+  </pre>
+</figure>
+
+
+</p>
+	
+
+</body>
+</html>
